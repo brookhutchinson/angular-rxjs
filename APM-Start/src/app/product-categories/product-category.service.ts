@@ -1,9 +1,13 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+// services
+import { HttpClient }      from '@angular/common/http';
+import { Injectable }      from '@angular/core';
 
-import { throwError, Observable } from 'rxjs';
-
+// interfaces
 import { ProductCategory } from './product-category';
+
+// rxjs
+import { Observable }      from 'rxjs';
+import { throwError }      from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,21 +15,23 @@ import { ProductCategory } from './product-category';
 export class ProductCategoryService {
   private productCategoriesUrl = 'api/productCategories';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   private handleError(err: any): Observable<never> {
-    // in a real world app, we may send the server to some remote logging infrastructure
-    // instead of just logging it to the console
     let errorMessage: string;
+
     if (err.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
+      // client-side error
       errorMessage = `An error occurred: ${err.error.message}`;
     } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
+      // server-side error
       errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
     }
+
+    // write to console
     console.error(err);
+
+    // throw error
     return throwError(errorMessage);
   }
 }

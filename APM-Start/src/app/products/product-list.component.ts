@@ -1,9 +1,14 @@
+// components
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { Subscription } from 'rxjs';
-
-import { Product } from './product';
+// services
 import { ProductService } from './product.service';
+
+// interfaces
+import { Product } from './product';
+
+// rxjs
+import { Subscription } from 'rxjs';
 
 @Component({
   templateUrl: './product-list.component.html',
@@ -17,14 +22,13 @@ export class ProductListComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   sub: Subscription;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.sub = this.productService.getProducts()
-      .subscribe(
-        products => this.products = products,
-        error => this.errorMessage = error
-      );
+    this.sub = this.productService.getProducts().subscribe(
+      products => this.products = products,
+      error => this.errorMessage = error
+    );
   }
 
   ngOnDestroy(): void {

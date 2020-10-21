@@ -1,7 +1,7 @@
+// data
 import { ProductCategory } from './product-category';
 
 export class ProductCategoryData {
-
   static categories: ProductCategory[] = [
     {
       id: 1,

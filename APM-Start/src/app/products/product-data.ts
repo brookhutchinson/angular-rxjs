@@ -1,3 +1,4 @@
+// interfaces
 import { Product } from './product';
 
 export class ProductData {
