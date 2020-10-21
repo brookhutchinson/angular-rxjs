@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+// components
+import { Component }      from '@angular/core';
 
-import { ProductService } from '../product.service';
+// services
+import { ProductService } from './../product.service';
 
 @Component({
   selector: 'pm-product-detail',
@@ -11,6 +13,5 @@ export class ProductDetailComponent {
   errorMessage = '';
   product;
 
-  constructor(private productService: ProductService) { }
-
+  constructor(private productService: ProductService) {}
 }
