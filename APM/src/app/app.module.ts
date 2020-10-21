@@ -1,28 +1,34 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+// angular modules
+import { NgModule }              from '@angular/core';
+import { AppRoutingModule }      from './app-routing.module';
+import { BrowserModule }         from '@angular/platform-browser';
+import { HttpClientModule }      from '@angular/common/http';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { AppData } from './app-data';
+// imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule }  from 'angular-in-memory-web-api';
+import { AppData }               from './app-data';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { WelcomeComponent } from './home/welcome.component';
+// components
+import { AppComponent }          from './app.component';
+import { WelcomeComponent }      from './home/welcome.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
+  // modules
   imports: [
+    // angular modules
     BrowserModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(AppData, { delay: 1000 }),
     AppRoutingModule
   ],
+  // components
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    WelcomeComponent
   ],
-  bootstrap: [AppComponent]
+  // bootstrap
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}
