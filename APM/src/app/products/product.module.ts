@@ -4,10 +4,10 @@ import { RouterModule }            from '@angular/router';
 import { ReactiveFormsModule }     from '@angular/forms';
 
 // components
-import { ProductListAltComponent } from './product-list-alt/product-list-alt.component';
-import { ProductDetailComponent }  from './product-list-alt/product-detail.component';
-import { ProductListComponent }    from './product-list.component';
-import { ProductShellComponent }   from './product-list-alt/product-shell.component';
+import { ProductListAltComponent } from './components/product-list-alt/product-list-alt.component';
+import { ProductDetailComponent }  from './components/product-detail/product-detail.component';
+import { ProductListComponent }    from './components/product-list/product-list.component';
+import { ProductShellComponent }   from './components/product-shell/product-shell.component';
 
 // shared modules
 import { SharedModule }            from './../shared/shared.module';

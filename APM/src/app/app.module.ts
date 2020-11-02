@@ -10,8 +10,8 @@ import { AppData }               from './data/app-data';
 
 // components
 import { AppComponent }          from './app.component';
-import { WelcomeComponent }      from './home/welcome.component';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { PageNotFoundComponent } from './home/components/page-not-found/page-not-found.component';
+import { WelcomeComponent }      from './home/components/welcome/welcome.component';
 
 @NgModule({
   // modules

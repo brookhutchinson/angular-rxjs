@@ -2,22 +2,22 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 // services
-import { ProductService }               from './../services/product.service';
+import { ProductService }               from './../../../services/product.service';
 
 // interfaces
-import { Product }                      from '../interfaces/product';
+import { Product }                      from './../../../interfaces/product';
 
 // rxjs
 import { Subscription }                 from 'rxjs';
 
 @Component({
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: 'pm-product-list',
+  templateUrl: './product-list-alt.component.html'
 })
-export class ProductListComponent implements OnInit, OnDestroy {
-  pageTitle = 'Product List';
+export class ProductListAltComponent implements OnInit, OnDestroy {
+  pageTitle = 'Products';
   errorMessage = '';
-  categories;
+  selectedProductId: number;
 
   products: Product[] = [];
   sub: Subscription;
@@ -37,11 +37,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  onAdd() {
-    console.log('Not yet implemented');
-  }
-
-  onSelected(categoryId: string) {
+  onSelected(productId: number) {
     console.log('Not yet implemented');
   }
 }
