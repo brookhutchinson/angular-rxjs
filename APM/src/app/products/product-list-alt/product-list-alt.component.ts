@@ -2,7 +2,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 // services
-import { ProductService }               from './../product.service';
+import { ProductService }               from './../../services/product.service';
 
 // interfaces
 import { Product }                      from './../product';
