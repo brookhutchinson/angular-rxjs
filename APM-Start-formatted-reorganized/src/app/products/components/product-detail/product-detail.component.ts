@@ -2,7 +2,7 @@
 import { Component }      from '@angular/core';
 
 // services
-import { ProductService } from './../product.service';
+import { ProductService } from './../../../services/product.service';
 
 @Component({
   selector: 'pm-product-detail',

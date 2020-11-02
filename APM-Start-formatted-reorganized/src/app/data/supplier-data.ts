@@ -1,5 +1,5 @@
 // interfaces
-import { Supplier } from './supplier';
+import { Supplier } from './../interfaces/supplier';
 
 export class SupplierData {
   static suppliers: Supplier[] = [

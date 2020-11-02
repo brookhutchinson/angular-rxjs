@@ -1,13 +1,11 @@
 // services
 import { Injectable }      from '@angular/core';
 import { HttpClient }      from '@angular/common/http';
+import { SupplierService } from './supplier.service';
 
 // interfaces
-import { Product }         from './product';
-import { Supplier }        from './../suppliers/supplier';
-
-// services
-import { SupplierService } from './../suppliers/supplier.service';
+import { Product }         from '../interfaces/product';
+import { Supplier }        from '../interfaces/supplier';
 
 // rxjs
 import { Observable }      from 'rxjs';

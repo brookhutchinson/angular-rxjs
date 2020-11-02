@@ -3,8 +3,8 @@ import { NgModule }              from '@angular/core';
 import { RouterModule }          from '@angular/router';
 
 // components
-import { PageNotFoundComponent } from './page-not-found.component';
-import { WelcomeComponent }      from './home/welcome.component';
+import { PageNotFoundComponent } from './home/components/page-not-found/page-not-found.component';
+import { WelcomeComponent }      from './home/components/welcome/welcome.component';
 
 @NgModule({
   // imports

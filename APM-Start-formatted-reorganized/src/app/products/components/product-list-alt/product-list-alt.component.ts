@@ -2,10 +2,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 // services
-import { ProductService }               from './../product.service';
+import { ProductService }               from './../../../services/product.service';
 
 // interfaces
-import { Product }                      from './../product';
+import { Product }                      from './../../../interfaces/product';
 
 // rxjs
 import { Subscription }                 from 'rxjs';
@@ -24,18 +24,20 @@ export class ProductListAltComponent implements OnInit, OnDestroy {
 
   constructor(private productService: ProductService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.sub = this.productService.getProducts().subscribe(
-      products => this.products = products,
-      error => this.errorMessage = error
+      // next
+      (products) => this.products = products,
+      // error
+      (error) => this.errorMessage = error
     );
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
-  onSelected(productId: number): void {
+  onSelected(productId: number) {
     console.log('Not yet implemented');
   }
 }
