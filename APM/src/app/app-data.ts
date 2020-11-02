@@ -7,9 +7,9 @@ import { ProductCategory } from './product-categories/product-category';
 import { Supplier } from './suppliers/supplier';
 
 // data
-import { ProductData } from './products/product-data';
+import { ProductData }         from './products/product-data';
 import { ProductCategoryData } from './product-categories/product-category-data';
-import { SupplierData } from './suppliers/supplier-data';
+import { SupplierData }        from './suppliers/supplier-data';
 
 export class AppData implements InMemoryDbService {
   createDb(): { products: Product[], productCategories: ProductCategory[], suppliers: Supplier[]} {

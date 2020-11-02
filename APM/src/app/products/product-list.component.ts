@@ -2,13 +2,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 // services
-import { ProductService } from './product.service';
+import { ProductService }               from './product.service';
 
 // interfaces
-import { Product } from './product';
+import { Product }                      from './product';
 
 // rxjs
-import { Subscription } from 'rxjs';
+import { Subscription }                 from 'rxjs';
 
 @Component({
   templateUrl: './product-list.component.html',
