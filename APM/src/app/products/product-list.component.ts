@@ -5,7 +5,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService }               from './../services/product.service';
 
 // interfaces
-import { Product }                      from './product';
+import { Product }                      from '../interfaces/product';
 
 // rxjs
 import { Subscription }                 from 'rxjs';

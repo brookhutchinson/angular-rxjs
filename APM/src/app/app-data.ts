@@ -2,9 +2,9 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 // interfaces
-import { Product } from './products/product';
-import { ProductCategory } from './product-categories/product-category';
-import { Supplier } from './suppliers/supplier';
+import { Product } from './interfaces/product';
+import { ProductCategory } from './interfaces/product-category';
+import { Supplier } from './interfaces/supplier';
 
 // data
 import { ProductData }         from './products/product-data';

@@ -1,5 +1,5 @@
 // interfaces
-import { Product } from './product';
+import { Product } from '../interfaces/product';
 
 export class ProductData {
   static products: Product[] = [

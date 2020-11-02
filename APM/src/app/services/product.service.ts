@@ -4,8 +4,8 @@ import { HttpClient }      from '@angular/common/http';
 import { SupplierService } from './supplier.service';
 
 // interfaces
-import { Product }         from '../products/product';
-import { Supplier }        from '../suppliers/supplier';
+import { Product }         from '../interfaces/product';
+import { Supplier }        from '../interfaces/supplier';
 
 // rxjs
 import { Observable }      from 'rxjs';

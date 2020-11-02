@@ -1,5 +1,5 @@
 // data
-import { ProductCategory } from './product-category';
+import { ProductCategory } from '../interfaces/product-category';
 
 export class ProductCategoryData {
   static categories: ProductCategory[] = [
