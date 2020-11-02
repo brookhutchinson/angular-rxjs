@@ -6,7 +6,7 @@ import { HttpClientModule }      from '@angular/common/http';
 
 // imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule }  from 'angular-in-memory-web-api';
-import { AppData }               from './app-data';
+import { AppData }               from './data/app-data';
 
 // components
 import { AppComponent }          from './app.component';

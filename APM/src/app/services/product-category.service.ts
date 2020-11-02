@@ -3,7 +3,7 @@ import { HttpClient }      from '@angular/common/http';
 import { Injectable }      from '@angular/core';
 
 // interfaces
-import { ProductCategory } from './../interfaces/product-category';
+import { ProductCategory } from '../interfaces/product-category';
 
 // rxjs
 import { Observable }      from 'rxjs';
