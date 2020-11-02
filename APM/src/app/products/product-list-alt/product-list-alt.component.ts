@@ -24,18 +24,20 @@ export class ProductListAltComponent implements OnInit, OnDestroy {
 
   constructor(private productService: ProductService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.sub = this.productService.getProducts().subscribe(
-      products => this.products = products,
-      error => this.errorMessage = error
+      // next
+      (products) => this.products = products,
+      // error
+      (error) => this.errorMessage = error
     );
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
-  onSelected(productId: number): void {
+  onSelected(productId: number) {
     console.log('Not yet implemented');
   }
 }
