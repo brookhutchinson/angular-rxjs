@@ -1,40 +1,30 @@
 // components
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // services
-import { ProductService }               from './../../../services/product.service';
+import { ProductService }    from './../../../services/product.service';
 
 // interfaces
-import { Product }                      from './../../../interfaces/product';
+import { Product }           from './../../../interfaces/product';
 
 // rxjs
-import { Subscription }                 from 'rxjs';
+import { Observable }        from 'rxjs';
 
 @Component({
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit, OnDestroy {
+export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
   errorMessage = '';
   categories;
-
-  products: Product[] = [];
-  sub: Subscription;
+  products$: Observable<Product[]>;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.sub = this.productService.getProducts().subscribe(
-      // next
-      (products) => this.products = products,
-      // error
-      (error) => this.errorMessage = error
-    );
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+    // retrive products
+    this.products$ = this.productService.getProducts();
   }
 
   onAdd() {
