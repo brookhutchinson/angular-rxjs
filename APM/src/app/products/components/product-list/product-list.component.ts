@@ -1,20 +1,21 @@
 // components
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 // services
-import { ProductService }    from './../../../services/product.service';
+import { ProductService }                             from './../../../services/product.service';
 
 // interfaces
-import { Product }           from './../../../interfaces/product';
+import { Product }                                    from './../../../interfaces/product';
 
 // rxjs
-import { Observable }        from 'rxjs';
-import { EMPTY }             from 'rxjs';
-import { catchError }        from 'rxjs/operators';
+import { Observable }                                 from 'rxjs';
+import { EMPTY }                                      from 'rxjs';
+import { catchError }                                 from 'rxjs/operators';
 
 @Component({
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
