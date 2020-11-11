@@ -62,5 +62,4 @@ export class ProductService {
     // throw error
     return throwError(errorMessage);
   }
-
 }

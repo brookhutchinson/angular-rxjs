@@ -9,6 +9,8 @@ import { Product }           from './../../../interfaces/product';
 
 // rxjs
 import { Observable }        from 'rxjs';
+import { EMPTY }             from 'rxjs';
+import { catchError }        from 'rxjs/operators';
 
 @Component({
   templateUrl: './product-list.component.html',
@@ -24,7 +26,16 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     // retrive products
-    this.products$ = this.productService.getProducts();
+    this.products$ = this.productService.getProducts()
+      .pipe(
+        catchError((err) => {
+          // set error message
+          this.errorMessage = err;
+
+          // return empty observable
+          return EMPTY;
+        })
+      );
   }
 
   onAdd() {
