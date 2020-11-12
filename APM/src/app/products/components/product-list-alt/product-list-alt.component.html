@@ -3,7 +3,7 @@
     {{ pageTitle }}
   </div><!-- /.card-header -->
 
-  <div class="card-body" *ngIf="products">
+  <div class="card-body" *ngIf="products$ | async as products">
     <div class="list-group">
       <button class="list-group-item" type="button" *ngFor="let product of products" [ngClass]="{'active': product?.id === selectedProductId}" (click)="onSelected(product.id)">
         {{ product.productName }} ({{ product.categoryId }})

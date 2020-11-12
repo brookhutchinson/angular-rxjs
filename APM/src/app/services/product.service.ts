@@ -4,8 +4,8 @@ import { HttpClient }      from '@angular/common/http';
 import { SupplierService } from './supplier.service';
 
 // interfaces
-import { Product }         from '../interfaces/product';
-import { Supplier }        from '../interfaces/supplier';
+import { Product }         from './../interfaces/product';
+import { Supplier }        from './../interfaces/supplier';
 
 // rxjs
 import { Observable }      from 'rxjs';
@@ -20,17 +20,9 @@ export class ProductService {
   private productsUrl = 'api/products';
   private suppliersUrl = this.supplierService.suppliersUrl;
 
-  constructor(private http: HttpClient, private supplierService: SupplierService) {}
+  products$ = this.http.get<Product[]>(this.productsUrl);
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl)
-      .pipe(
-        // write to console
-        tap(data => console.log('Products: ', JSON.stringify(data))),
-        // catch error
-        catchError(this.handleError)
-      );
-  }
+  constructor(private http: HttpClient, private supplierService: SupplierService) {}
 
   private fakeProduct(): Product {
     return {
