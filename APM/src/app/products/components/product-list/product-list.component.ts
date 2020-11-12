@@ -4,11 +4,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 // services
 import { ProductService }                             from './../../../services/product.service';
 
-// interfaces
-import { Product }                                    from './../../../interfaces/product';
-
 // rxjs
-import { Observable }                                 from 'rxjs';
 import { EMPTY }                                      from 'rxjs';
 import { catchError }                                 from 'rxjs/operators';
 
@@ -21,7 +17,16 @@ export class ProductListComponent {
   pageTitle = 'Product List';
   errorMessage = '';
   categories;
-  products$ = this.productService.products$;
+
+  products$ = this.productService.products$
+    .pipe(
+      // catch error
+      catchError((err) => {
+        // set error message
+        this.errorMessage = err;
+        return EMPTY;
+      })
+    );
 
   constructor(private productService: ProductService) {}
 

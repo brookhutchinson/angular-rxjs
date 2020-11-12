@@ -4,12 +4,6 @@ import { Component }      from '@angular/core';
 // services
 import { ProductService } from './../../../services/product.service';
 
-// interfaces
-import { Product }        from './../../../interfaces/product';
-
-// rxjs
-import { Subscription }   from 'rxjs';
-
 @Component({
   selector: 'pm-product-list',
   templateUrl: './product-list-alt.component.html'
