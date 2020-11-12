@@ -20,7 +20,13 @@ export class ProductService {
   private productsUrl = 'api/products';
   private suppliersUrl = this.supplierService.suppliersUrl;
 
-  products$ = this.http.get<Product[]>(this.productsUrl);
+  products$ = this.http.get<Product[]>(this.productsUrl)
+    .pipe(
+      // write to console
+      tap(data => console.log('Products: ', JSON.stringify(data))),
+      // catch error
+      catchError(this.handleError)
+    );
 
   constructor(private http: HttpClient, private supplierService: SupplierService) {}
 
