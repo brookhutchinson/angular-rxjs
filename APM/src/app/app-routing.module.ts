@@ -10,15 +10,16 @@ import { WelcomeComponent }      from './home/components/welcome/welcome.compone
   // imports
   imports: [
     RouterModule.forRoot([
-      // welcome route
-      { path: 'welcome', component: WelcomeComponent },
-      // products route
-      { path: 'products', loadChildren: () => import('./products/product.module').then(m => m.ProductModule) },
-      // redirect to welcome route
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      // page not found route
-      { path: '**', component: PageNotFoundComponent }
-    ])
+    // welcome route
+    { path: 'welcome', component: WelcomeComponent },
+    // products route
+    { path: 'products', loadChildren: () => import('./products/product.module').then(m => m.ProductModule) },
+    // redirect to welcome route
+    { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+    // page not found route
+    { path: '**', component: PageNotFoundComponent }
+    ],
+    { relativeLinkResolution: 'legacy' })
   ],
   // exports
   exports: [ RouterModule ]
